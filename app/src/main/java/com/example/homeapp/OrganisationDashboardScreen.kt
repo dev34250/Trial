@@ -91,7 +91,7 @@ fun OrganizationDashboardScreen() {
             Text(
                 text = "Dashboard",
                 modifier = Modifier
-                    .padding(start = 16.dp, top = 2.dp),
+                    .padding(start = 16.dp, top = 8.dp),
                 style = TextStyle(fontSize = 20.sp)
             )
             IconButton(onClick = {}) {
