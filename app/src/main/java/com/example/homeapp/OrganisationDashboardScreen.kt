@@ -12,13 +12,16 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.graphicsLayer
+import androidx.compose.material.icons.automirrored.filled.KeyboardArrowRight
+import androidx.compose.ui.text.TextStyle
 //import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 
 @Composable
 fun OrganizationDashboardScreen() {
     Scaffold(
-        topBar = {
+        /*topBar = {
             TopAppBar(
                 title = { Text(
                     text = "Dashboard",
@@ -35,7 +38,7 @@ fun OrganizationDashboardScreen() {
                     }
                 }
             )
-        },
+        },*/
         bottomBar = {
             BottomAppBar(
                 //backgroundColor = Color(0xFFAB47BC), // Purple
@@ -49,7 +52,7 @@ fun OrganizationDashboardScreen() {
                         clip = true
                     }
                     .background(
-                            color = androidx.compose.material3.MaterialTheme.colorScheme.primary,
+                        color = androidx.compose.material3.MaterialTheme.colorScheme.primary,
                         shape = RoundedCornerShape(
                             topStart = 20.dp,
                             topEnd = 20.dp
@@ -80,6 +83,26 @@ fun OrganizationDashboardScreen() {
             )
         }
     ) { innerPadding ->
+        Row (
+            modifier = Modifier
+                .fillMaxWidth(),
+            horizontalArrangement = Arrangement.SpaceBetween
+        ){
+            Text(
+                text = "Dashboard",
+                modifier = Modifier
+                    .padding(start = 16.dp, top = 2.dp),
+                style = TextStyle(fontSize = 20.sp)
+            )
+            IconButton(onClick = {}) {
+                Icon(Icons.Filled.Settings,
+                    contentDescription = "Settings",
+                    modifier = Modifier
+                        .padding(top = 2.dp, end = 8.dp)
+                )
+            }
+        }
+        Spacer(modifier = Modifier.height(32.dp))
         Column(
             modifier = Modifier.padding(innerPadding),
             horizontalAlignment = Alignment.CenterHorizontally
@@ -110,7 +133,7 @@ fun OrganizationDashboardScreen() {
                     ) {
                         Text(text = "Analytics")
                         Spacer(modifier = Modifier.weight(1f))
-                        Icon(Icons.Filled.Check, contentDescription = "Chevron Right")
+                        Icon(Icons.AutoMirrored.Filled.KeyboardArrowRight, contentDescription = "Chevron Right")
                     }
                 }
                 OutlinedButton(
@@ -123,7 +146,7 @@ fun OrganizationDashboardScreen() {
                     ) {
                         Text(text = "Impressions")
                         Spacer(modifier = Modifier.weight(1f))
-                        Icon(Icons.Filled.Check, contentDescription = "Chevron Right")
+                        Icon(Icons.AutoMirrored.Filled.KeyboardArrowRight, contentDescription = "Chevron Right")
                     }
                 }
                 OutlinedButton(
@@ -136,7 +159,7 @@ fun OrganizationDashboardScreen() {
                     ) {
                         Text(text = "Camps")
                         Spacer(modifier = Modifier.weight(1f))
-                        Icon(Icons.Filled.Check, contentDescription = "Chevron Right")
+                        Icon(Icons.AutoMirrored.Filled.KeyboardArrowRight, contentDescription = "Chevron Right")
                     }
                 }
                 OutlinedButton(
@@ -149,7 +172,7 @@ fun OrganizationDashboardScreen() {
                     ) {
                         Text(text = "Volunteers")
                         Spacer(modifier = Modifier.weight(1f))
-                        Icon(Icons.Filled.Check, contentDescription = "Chevron Right")
+                        Icon(Icons.AutoMirrored.Filled.KeyboardArrowRight, contentDescription = "Chevron Right")
                     }
                 }
             }
